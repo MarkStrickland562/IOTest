@@ -5,6 +5,7 @@ $(document).ready(function() {
         dataType: "text",
         success: function(data) {processData(data);}
      });
+    console.log("After function call")
 });
 
 function processData(allText) {
