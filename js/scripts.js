@@ -1,13 +1,3 @@
-$(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "data/data.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-     });
-    console.log("After function call")
-});
-
 function processData(allText) {
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
@@ -26,3 +16,13 @@ function processData(allText) {
     }
     console.log(lines);
 }
+
+$(document).ready(function() {
+      console.log("Before function call")
+    $.ajax({
+        type: "GET",
+        url: "data/data.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+     });
+});
