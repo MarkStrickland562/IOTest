@@ -80,9 +80,9 @@ $(document).ready(function() {
   attachContactListeners();
   loadQuestions();
 
-//  $("form#playGame").submit(function(event) {
-//    event.preventDefault();
+  $("form#playGame").submit(function(event) {
+    event.preventDefault();
 
     playGame();
-//  })
+  })
 });
