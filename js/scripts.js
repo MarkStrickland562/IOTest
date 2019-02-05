@@ -21,14 +21,10 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
 }
 
 TriviaGame.prototype.setQuestionUsed = function(questionId) {
-console.log("In setQuestionUsed");
-console.log(questionId);
   for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
         this.triviaQuestions[i].questionUsed = "1";
-console.log(this.triviaQuestions[i].questionUsed);
-console.log(this.triviaQuestions[i]);
         break;
       }
     }
@@ -76,11 +72,10 @@ function processData(allText) {
   }
 }
 
-function playGame() {
-  currentQuestion = triviaGame.getTriviaQuestion("where");
-  console.log("Start of playGame");
-  console.log(currentQuestion.questionId);
+function playGame(category) {
+  currentQuestion = triviaGame.getTriviaQuestion(category);
   triviaGame.setQuestionUsed(currentQuestion.questionId);
+console.log(currentQuestion);
 }
 
 function attachContactListeners() {
@@ -91,9 +86,11 @@ $(document).ready(function() {
   attachContactListeners();
   loadQuestions();
 
-  $("form#playGame").submit(function(event) {
-    event.preventDefault();
+  $("#category-button button").click(function() {
+    //get category the user selected
+    var category = $("#category-selection input[name='category']:checked").closest('label').text();
+    console.log(category);
 
-    playGame();
+    playGame(category);
   })
 });

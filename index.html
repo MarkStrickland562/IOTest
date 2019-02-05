@@ -8,10 +8,18 @@
     <title>I/O Test</title>
   </head>
   <body>
-    <div class="row">
-  <form id="playGame">
-    <button type="submit" class="btn-submit">Play Game</button>
-  </form>
-</div>
+    <div id="container-welcome">
+            <div class="user-instruction">Select a category below to test your knowledge...or search skills :)</div>
+            <div id="category-selection" class="container">
+              <label><input type="radio" name="category" value="who" checked />Who is it?</label>
+              <label><input type="radio" name="category" value="who" />What is it?</label>
+              <label><input type="radio" name="category" value="when"/> When was it?</label>
+              <label><input type="radio" name="category" value="where" /> Where is it?</label>
+              <label><input type="radio" name="category" value="why" /> Why?</label>
+            </div>
+            <div id="category-button">
+              <button class="btn btn-success" type="button" name="button">Play</button>
+            </div>
+          </div>
   </body>
 </html>
