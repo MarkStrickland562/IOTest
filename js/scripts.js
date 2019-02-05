@@ -38,6 +38,15 @@ function TriviaQuestion (questionID, imageURL, questionType, hint, answerOne, an
 var triviaGame = new TriviaGame();
 var currentQuestion;
 
+function loadQuestions() {
+  $.ajax({
+        type: "GET",
+        url: "data/trivia_questions.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+  });
+}
+
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(',');
@@ -63,14 +72,17 @@ function playGame() {
   console.log(currentQuestion);
 }
 
+function attachContactListeners() {
+
+};
+
 $(document).ready(function() {
+  attachContactListeners();
+  loadQuestions();
 
-  $.ajax({
-        type: "GET",
-        url: "data/trivia_questions.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-  });
+//  $("form#playGame").submit(function(event) {
+//    event.preventDefault();
 
-  playGame();
+    playGame();
+//  })
 });
