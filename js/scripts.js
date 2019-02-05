@@ -51,12 +51,13 @@ function processData(allText) {
 function playGame() {
   console.log(triviaGame.length);
 
-  var currentQuestion = triviaGame.getTriviaQuestion("where");
+  currentQuestion = triviaGame.getTriviaQuestion("where");
   console.log("Current Question");
   console.log(currentQuestion);
 }
 
 var triviaGame = new TriviaGame();
+var currentQuestion;
 
 
 $(document).ready(function() {
