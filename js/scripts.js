@@ -27,7 +27,8 @@ function TriviaQuestion (imageURL, questionType, hint, answerOne, answerTwo, ans
   this.answerTwo = answerTwo,
   this.answerThree = answerThree,
   this.answerFour = answerFour,
-  this.correctAnswer = correctAnswer
+  this.correctAnswer = correctAnswer,
+  this.questionUsed = 0
 }
 
 function processData(allText) {
