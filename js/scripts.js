@@ -1,13 +1,25 @@
+// Business Logic for TriviaGame
 function TriviaGame() {
-  this.triviaQuestions = [],
-  this.questionUsed = 0
+  this.triviaQuestions = []
 }
 
-TriviaGame.prototype.addTriviaQuestions = function(triviaQuestions) {
+TriviaGame.prototype.addTriviaQuestion = function(triviaQuestion) {
   this.triviaQuestions.push(triviaQuestions);
 }
 
-function TriviaQuestions (imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer) {
+TriviaGame.prototype.getTriviaQuestion(questionType) {
+  var triviaQuestionsSet = [];
+  for (var i=0; i< this.triviaQuestions.length, i++) {
+    if (this.triviaQuestions[i]) {
+      if (this.triviaQuestions[i].questionType === questionType && this.triviaQuestions[i].questionUsed === 0) {
+        triviaQuestionsSet.push(this.triviaQuestions[i]);
+      }
+    }
+  }
+}
+
+// Business Logic for TriviaQuestions
+function TriviaQuestion (imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer, questionUsed) {
   this.imageURL = imageURL,
   this.questionType = questionType,
   this.hint = hint,
@@ -23,16 +35,14 @@ function processData(allText) {
     var headers = allTextLines[0].split(',');
     var lines = [];
 
-console.log(allTextLines);
-
     for (var i=1; i<allTextLines.length; i++) {
         var data = allTextLines[i].split(',');
         if (data.length == headers.length) {
-            var triviaQuestions = new TriviaQuestions(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]);
-            triviaGame.addTriviaQuestions(triviaQuestions);
+            var triviaQuestion = new TriviaQuestion(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]);
+            triviaGame.addTriviaQuestion(triviaQuestion);
         }
     }
-console.log(triviaQuestions);
+console.log(triviaQuestion);
 console.log(triviaGame);
 }
 
