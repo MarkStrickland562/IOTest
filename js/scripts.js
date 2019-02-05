@@ -59,17 +59,10 @@ function processData(allText) {
       triviaGame.addTriviaQuestion(triviaQuestion);
     }
   }
-  console.log("In processData");
-  console.log(triviaGame);
 }
 
 function playGame() {
-  console.log("In playGame");
-  console.log(triviaGame.triviaQuestions.length);
-
   currentQuestion = triviaGame.getTriviaQuestion("where");
-  console.log("Current Question");
-  console.log(currentQuestion);
 }
 
 function attachContactListeners() {
@@ -84,5 +77,6 @@ $(document).ready(function() {
     event.preventDefault();
 
     playGame();
+    console.log(currentQuestion);
   })
 });
