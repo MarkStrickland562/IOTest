@@ -21,7 +21,7 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
 }
 
 TriviaGame.prototype.setQuestionUsed = function(questionId) {
-  for (var=0; i< this.triviaQuestions.length; i++) {
+  for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
         triviaQuestions[i].questionUsed = 1;
