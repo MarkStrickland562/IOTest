@@ -27,8 +27,8 @@ console.log(questionId);
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
         this.triviaQuestions[i].questionUsed = "1";
-console.log(triviaQuestions[i].questionUsed);
-console.log(triviaQuestions[i]);
+console.log(this.triviaQuestions[i].questionUsed);
+console.log(this.triviaQuestions[i]);
         break;
       }
     }
