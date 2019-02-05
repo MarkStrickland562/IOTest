@@ -3,6 +3,10 @@ function TriviaGame() {
   this.questionUsed = 0
 }
 
+TriviaGame.prototype.addTriviaQuestions = function(triviaQuestions) {
+  this.triviaQuestions.push(triviaQuestions);
+}
+
 function TriviaQuestions (imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer) {
   this.imageURL = imageURL,
   this.questionType = questionType,
@@ -25,15 +29,14 @@ console.log(allTextLines);
         var data = allTextLines[i].split(',');
         if (data.length == headers.length) {
             var triviaQuestions = new TriviaQuestions(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]);
-
-//            for (var j=0; j<headers.length; j++) {
-//                tarr.push(data[j]);
-//            }
-//            lines.push(tarr);
+            triviaGame.addTriviaQuestions(triviaQuestions);
         }
     }
 console.log(triviaQuestions);
+console.log(triviaGame);
 }
+
+var triviaGame = new triviaGame();
 
 $(document).ready(function() {
 
