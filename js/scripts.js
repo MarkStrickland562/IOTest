@@ -48,6 +48,14 @@ function processData(allText) {
   }
 }
 
+function playGame() {
+  console.log(triviaGame.length);
+
+  var currentQuestion = triviaGame.getTriviaQuestion("where");
+  console.log("Current Question");
+  console.log(currentQuestion);
+}
+
 var triviaGame = new TriviaGame();
 
 
@@ -59,9 +67,6 @@ $(document).ready(function() {
         dataType: "text",
         success: function(data) {processData(data);}
   });
-  console.log(triviaGame.length);
-  
-  var currentQuestion = triviaGame.getTriviaQuestion("where");
-  console.log("Current Question");
-  console.log(currentQuestion);
+
+  playGame();
 });
