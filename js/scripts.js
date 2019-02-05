@@ -20,6 +20,17 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
   return triviaQuestionSet[questionNumber];
 }
 
+TriviaGame.prototype.setQuestionUsed = function(questionId) {
+  for (var=0; i< this.triviaQuestions.length; i++) {
+    if (this.triviaQuestions[i]) {
+      if (this.triviaQuestions[i].questionId === questionId) {
+        triviaQuestions[i].questionUsed = 1;
+console.log(triviaQuestions[i]);
+      }
+    }
+  }
+}
+
 // Business Logic for TriviaQuestions
 function TriviaQuestion (questionID, imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer, questionUsed) {
   this.questionID = questionID,
@@ -63,6 +74,7 @@ function processData(allText) {
 
 function playGame() {
   currentQuestion = triviaGame.getTriviaQuestion("where");
+  triviaGame.setQuestionUsed(currentQuestion.questionID);
 }
 
 function attachContactListeners() {
