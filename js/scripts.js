@@ -89,7 +89,7 @@ $(document).ready(function() {
 
   $("#category-button button").click(function() {
     //get category the user selected
-    var category = $("#category-selection input[name='category']:checked").value();
+    var category = $("#category-selection input[name='category']:checked").val();
     console.log(category);
 
     playGame(category);
