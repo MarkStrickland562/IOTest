@@ -17,6 +17,7 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
     }
   }
     var questionNumber = Math.floor(Math.random() * triviaQuestionSet.length);
+    console.log(triviaQuestionSet[questionNumber]);
     return triviaQuestionSet[questionNumber];
 }
 
