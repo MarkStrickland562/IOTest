@@ -37,7 +37,7 @@ console.log(triviaQuestions[i]);
 
 // Business Logic for TriviaQuestions
 function TriviaQuestion (questionId, imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer, questionUsed) {
-  this.questionID = questionID,
+  this.questionID = questionId,
   this.imageURL = imageURL,
   this.questionType = questionType,
   this.hint = hint,
