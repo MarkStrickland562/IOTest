@@ -4,7 +4,7 @@ function TriviaGame() {
 }
 
 TriviaGame.prototype.addTriviaQuestion = function(triviaQuestion) {
-  this.triviaQuestions.push(triviaQuestions);
+  this.triviaQuestions.push(triviaQuestion);
 }
 
 TriviaGame.prototype.getTriviaQuestion = function(questionType) {
