@@ -13,13 +13,11 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionType === questionType && this.triviaQuestions[i].questionUsed === 0) {
         triviaQuestionSet.push(this.triviaQuestions[i]);
-console.log(this.triviaQuestions[i]);
       }
     }
   }
-    var questionNumber = Math.floor(Math.random() * triviaQuestionSet.length);
-    console.log(triviaQuestionSet[questionNumber]);
-    return triviaQuestionSet[questionNumber];
+  var questionNumber = Math.floor(Math.random() * triviaQuestionSet.length);
+  return triviaQuestionSet[questionNumber];
 }
 
 // Business Logic for TriviaQuestions
@@ -48,15 +46,16 @@ function processData(allText) {
             triviaGame.addTriviaQuestion(triviaQuestion);
         }
     }
-    var currentQuestion = triviaGame.getTriviaQuestion("where");
-    console.log("Current Question");
-    console.log(currentQuestion);
 //console.log(triviaQuestion);
 //console.log(triviaGame);
 //console.log(questionNumber);
 }
 
 var triviaGame = new TriviaGame();
+
+var currentQuestion = triviaGame.getTriviaQuestion("where");
+console.log("Current Question");
+console.log(currentQuestion);
 
 $(document).ready(function() {
 
