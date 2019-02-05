@@ -13,6 +13,7 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionType === questionType && this.triviaQuestions[i].questionUsed === 0) {
         triviaQuestionSet.push(this.triviaQuestions[i]);
+console.log(this.triviaQuestions[i]);
       }
     }
   }
