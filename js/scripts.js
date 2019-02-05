@@ -35,8 +35,6 @@ console.log(allTextLines);
 console.log(triviaQuestions);
 }
 
-var triviaQuestions = new triviaQuestions;
-
 $(document).ready(function() {
 
   $.ajax({
