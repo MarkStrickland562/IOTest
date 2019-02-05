@@ -36,7 +36,7 @@ console.log(triviaQuestions);
 console.log(triviaGame);
 }
 
-var triviaGame = new triviaGame();
+var triviaGame = new TriviaGame();
 
 $(document).ready(function() {
 
