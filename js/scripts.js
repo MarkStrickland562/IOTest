@@ -23,7 +23,7 @@ $(document).ready(function() {
 console.log("Before the function");
   $.ajax({
         type: "GET",
-        url: "https://github.com/MarkStrickland562/IOTest/tree/master/data/trivia_questions.csv",
+        url: "data/trivia_questions.csv",
         dataType: "text",
         success: function(data) {processData(data);}
   });
