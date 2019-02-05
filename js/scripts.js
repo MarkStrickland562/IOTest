@@ -76,6 +76,7 @@ function processData(allText) {
 
 function playGame() {
   currentQuestion = triviaGame.getTriviaQuestion("where");
+  console.log(currentQuestion.questionId);
   triviaGame.setQuestionUsed(currentQuestion.questionID);
 }
 
@@ -91,6 +92,5 @@ $(document).ready(function() {
     event.preventDefault();
 
     playGame();
-    console.log(currentQuestion);
   })
 });
