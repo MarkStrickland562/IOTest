@@ -48,7 +48,7 @@ function processData(allText) {
     }
 console.log(triviaQuestion);
 console.log(triviaGame);
-var questionNumber = triviaGame.getTriviaQuestion();
+var questionNumber = triviaGame.getTriviaQuestion("where");
 console.log(questionNumber);
 }
 
