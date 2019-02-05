@@ -12,12 +12,14 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
   for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionType === questionType && this.triviaQuestions[i].questionUsed === 0) {
+console.log("Here");
 console.log(this.triviaQuestions[i]);
         triviaQuestionSet.push(this.triviaQuestions[i]);
       }
     }
   }
-  var questionNumber = Math.floor(Math.random() * triviaQuestionSet.length);
+    var questionNumber = Math.floor(Math.random() * triviaQuestionSet.length);
+  console.log(triviaQuestionSet[questionNumber]);
   return questionNumber;
 }
 
