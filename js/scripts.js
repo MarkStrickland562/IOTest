@@ -53,7 +53,7 @@ function processData(allText) {
 }
 
 function playGame() {
-  console.log(triviaGame.length);
+  console.log(triviaGame.triviaQuestions.length);
 
   currentQuestion = triviaGame.getTriviaQuestion("where");
   console.log("Current Question");
