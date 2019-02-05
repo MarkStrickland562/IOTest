@@ -1,4 +1,5 @@
 function processData(allText) {
+console.log("In the function");
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
     var lines = [];
@@ -14,15 +15,16 @@ function processData(allText) {
             lines.push(tarr);
         }
     }
-    console.log(lines);
+console.log(headers)
+console.log(tarr);
 }
 
 $(document).ready(function() {
-      console.log("Before function call")
-    $.ajax({
+console.log("Before the function");
+  $.ajax({
         type: "GET",
-        url: "data/data.csv",
+        url: "https://github.com/MarkStrickland562/IOTest/tree/master/data/trivia_questions.csv",
         dataType: "text",
         success: function(data) {processData(data);}
-     });
+  });
 });
