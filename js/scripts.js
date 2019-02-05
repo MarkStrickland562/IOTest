@@ -34,6 +34,10 @@ function TriviaQuestion (questionID, imageURL, questionType, hint, answerOne, an
   this.questionUsed = 0
 }
 
+// User Interface Logic
+var triviaGame = new TriviaGame();
+var currentQuestion;
+
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(',');
@@ -55,10 +59,6 @@ function playGame() {
   console.log("Current Question");
   console.log(currentQuestion);
 }
-
-var triviaGame = new TriviaGame();
-var currentQuestion;
-
 
 $(document).ready(function() {
 
