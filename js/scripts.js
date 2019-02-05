@@ -22,6 +22,7 @@ TriviaGame.prototype.getTriviaQuestion = function(questionType) {
 
 TriviaGame.prototype.setQuestionUsed = function(questionId) {
 console.log("In setQuestionUsed");
+console.log(questionId);
   for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
@@ -78,7 +79,7 @@ function processData(allText) {
 function playGame() {
   currentQuestion = triviaGame.getTriviaQuestion("where");
   console.log("Start of playGame");
-  console.log(currentQuestion[0].questionUsed);
+  console.log(currentQuestion[10]);
   triviaGame.setQuestionUsed(currentQuestion.questionID);
 }
 
