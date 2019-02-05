@@ -26,7 +26,7 @@ console.log(questionId);
   for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
-        triviaQuestions[i].questionUsed = "1";
+        this.triviaQuestions[i].questionUsed = "1";
 console.log(triviaQuestions[i].questionUsed);
 console.log(triviaQuestions[i]);
         break;
@@ -36,7 +36,7 @@ console.log(triviaQuestions[i]);
 }
 
 // Business Logic for TriviaQuestions
-function TriviaQuestion (questionID, imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer, questionUsed) {
+function TriviaQuestion (questionId, imageURL, questionType, hint, answerOne, answerTwo, answerThree, answerFour, correctAnswer, questionUsed) {
   this.questionID = questionID,
   this.imageURL = imageURL,
   this.questionType = questionType,
