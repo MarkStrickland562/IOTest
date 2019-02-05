@@ -78,7 +78,7 @@ function processData(allText) {
 function playGame() {
   currentQuestion = triviaGame.getTriviaQuestion("where");
   console.log("Start of playGame");
-  console.log(currentQuestion.questionId);
+  console.log(currentQuestion);
   triviaGame.setQuestionUsed(currentQuestion.questionID);
 }
 
