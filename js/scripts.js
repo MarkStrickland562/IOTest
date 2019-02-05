@@ -73,6 +73,7 @@ function processData(allText) {
 }
 
 function playGame(category) {
+console.log(category);
   currentQuestion = triviaGame.getTriviaQuestion(category);
   triviaGame.setQuestionUsed(currentQuestion.questionId);
 console.log(currentQuestion);
@@ -88,7 +89,7 @@ $(document).ready(function() {
 
   $("#category-button button").click(function() {
     //get category the user selected
-    var category = $("#category-selection input[name='category']:checked").closest('label').text();
+    var category = $("#category-selection input[name='category']:checked").value();
     console.log(category);
 
     playGame(category);
