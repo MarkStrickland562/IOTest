@@ -35,27 +35,21 @@ function TriviaQuestion (questionID, imageURL, questionType, hint, answerOne, an
 }
 
 function processData(allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split(',');
-    var lines = [];
+  var allTextLines = allText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(',');
+  var lines = [];
 
-    for (var i=1; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
-            var triviaQuestion = new TriviaQuestion(i, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]);
-            triviaGame.addTriviaQuestion(triviaQuestion);
-        }
+  for (var i=1; i<allTextLines.length; i++) {
+    var data = allTextLines[i].split(',');
+    if (data.length == headers.length) {
+      var triviaQuestion = new TriviaQuestion(i, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]);
+      triviaGame.addTriviaQuestion(triviaQuestion);
     }
-//console.log(triviaQuestion);
-//console.log(triviaGame);
-//console.log(questionNumber);
+  }
 }
 
 var triviaGame = new TriviaGame();
 
-var currentQuestion = triviaGame.getTriviaQuestion("where");
-console.log("Current Question");
-console.log(currentQuestion);
 
 $(document).ready(function() {
 
@@ -65,6 +59,9 @@ $(document).ready(function() {
         dataType: "text",
         success: function(data) {processData(data);}
   });
-
-
+  console.log(triviaGame.length);
+  
+  var currentQuestion = triviaGame.getTriviaQuestion("where");
+  console.log("Current Question");
+  console.log(currentQuestion);
 });
