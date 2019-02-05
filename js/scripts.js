@@ -48,6 +48,9 @@ function processData(allText) {
             triviaGame.addTriviaQuestion(triviaQuestion);
         }
     }
+    var currentQuestion = triviaGame.getTriviaQuestion("where");
+    console.log("Current Question");
+    console.log(currentQuestion);
 //console.log(triviaQuestion);
 //console.log(triviaGame);
 //console.log(questionNumber);
@@ -64,7 +67,5 @@ $(document).ready(function() {
         success: function(data) {processData(data);}
   });
 
-  var currentQuestion = triviaGame.getTriviaQuestion("where");
-  console.log("Current Question");
-  console.log(currentQuestion);
+
 });
