@@ -50,9 +50,12 @@ function processData(allText) {
       triviaGame.addTriviaQuestion(triviaQuestion);
     }
   }
+  console.log("In processData");
+  console.log(triviaGame);
 }
 
 function playGame() {
+  console.log("In playGame");
   console.log(triviaGame.triviaQuestions.length);
 
   currentQuestion = triviaGame.getTriviaQuestion("where");
