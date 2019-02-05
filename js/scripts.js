@@ -24,8 +24,10 @@ TriviaGame.prototype.setQuestionUsed = function(questionId) {
   for (var i=0; i< this.triviaQuestions.length; i++) {
     if (this.triviaQuestions[i]) {
       if (this.triviaQuestions[i].questionId === questionId) {
-        triviaQuestions[i].questionUsed = 1;
+        triviaQuestions[i].questionUsed = "1";
+console.log(triviaQuestions[i].questionUsed);
 console.log(triviaQuestions[i]);
+        break;
       }
     }
   }
