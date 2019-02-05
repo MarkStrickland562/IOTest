@@ -7,7 +7,7 @@ TriviaGame.prototype.addTriviaQuestion = function(triviaQuestion) {
   this.triviaQuestions.push(triviaQuestions);
 }
 
-TriviaGame.prototype.getTriviaQuestion(questionType) {
+TriviaGame.prototype.getTriviaQuestion = function(questionType) {
   var triviaQuestionsSet = [];
   for (var i=0; i< this.triviaQuestions.length, i++) {
     if (this.triviaQuestions[i]) {
